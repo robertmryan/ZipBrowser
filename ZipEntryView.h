@@ -54,13 +54,13 @@
 @class ZipDocument;
 
 @interface ZipEntryView : NSView {
-    NSViewController *viewController;
-    ZipDocument *zipDocument;
+    NSViewController *__unsafe_unretained viewController;
+    ZipDocument *__unsafe_unretained zipDocument;
     NSNumberFormatter *numberFormatter;
     NSArray *childAccessibilityElements;
 }
 
-@property NSViewController *viewController;
-@property ZipDocument *zipDocument;
+@property (unsafe_unretained) NSViewController *viewController;
+@property (unsafe_unretained) ZipDocument *zipDocument;
 
 @end

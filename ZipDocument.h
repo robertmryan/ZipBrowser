@@ -73,7 +73,7 @@
 - (void)reloadBrowser:(id)sender;
 - (void)addEntries:(NSArray *)array;
 - (void)readEntriesForOperation:(NSOperation *)operation;
-- (BOOL)writeEntry:(ZipEntry *)zipEntry toFileURL:(NSURL *)fileURL forOperation:(NSOperation *)operation error:(NSError **)error;
+- (BOOL)writeEntry:(ZipEntry *)zipEntry toFileURL:(NSURL *)fileURL forOperation:(NSOperation *)operation error:(NSError * __strong *)error;
 - (BOOL)writeSelectionToPasteboard:(NSPasteboard *)pboard;
 + (void)registerServices;
 

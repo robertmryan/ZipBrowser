@@ -69,8 +69,8 @@
 - (BOOL)addToRootEntry:(ZipEntry *)rootEntry;
 
 @property (readonly) NSString *name;
-@property (readonly) NSString *path;
-@property (readonly) NSArray *childEntries;
+@property (unsafe_unretained, readonly) NSString *path;
+@property (unsafe_unretained, readonly) NSArray *childEntries;
 @property (readonly) uint32_t headerOffset;
 @property (readonly) uint32_t CRC;
 @property (readonly) uint32_t compressedSize;

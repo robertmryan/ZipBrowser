@@ -107,7 +107,7 @@ static NSString *ZipDocumentReloadBrowserNotification = @"ZipDocumentReloadBrows
 - (id)initWithZipDocument:(ZipDocument *)document entry:(ZipEntry *)entry fileURL:(NSURL *)url;
 
 @property (readonly) BOOL succeeded;
-@property (readonly) NSError *error;
+@property (strong, readonly) NSError *error;
 
 @end
 
@@ -244,7 +244,7 @@ static inline uint32_t _crcFromData(NSData *data) {
     return crc32(crc, [data bytes], [data length]);
 }
 
-- (BOOL)writeEntry:(ZipEntry *)zipEntry toFileURL:(NSURL *)fileURL forOperation:(NSOperation *)operation error:(NSError **)error {
+- (BOOL)writeEntry:(ZipEntry *)zipEntry toFileURL:(NSURL *)fileURL forOperation:(NSOperation *)operation error:(NSError * __strong *)error {
     // This method is called in the background to uncompress an individual zip entry and write it to disk as a result of a drag
     BOOL retval = NO;
     unsigned long long length = [fileBuffer fileLength];

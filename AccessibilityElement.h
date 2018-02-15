@@ -55,7 +55,7 @@
 
 @interface AccessibilityElement : NSObject {
     NSString *accessibilityRole;
-    NSView *parentView;
+    NSView *__unsafe_unretained parentView;
     NSInteger accessibilityIndex;
     NSString *stringValue;
     NSRect bounds;
@@ -64,7 +64,7 @@
 - (id)initWithRole:(NSString *)role parentView:(NSView *)parent index:(NSInteger)idx;
 
 @property (readonly) NSString *accessibilityRole;
-@property (readonly) NSView *parentView;
+@property (unsafe_unretained, readonly) NSView *parentView;
 @property (readonly) NSInteger accessibilityIndex;
 
 @property (readwrite, copy) NSString *stringValue;

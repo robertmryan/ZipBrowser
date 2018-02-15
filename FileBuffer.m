@@ -128,9 +128,8 @@
     fileHandle = nil;
 }
 
-- (void)finalize {
+- (void)dealloc {
     [self close];
-    [super finalize];
 }
 
 - (unsigned long long)fileLength {

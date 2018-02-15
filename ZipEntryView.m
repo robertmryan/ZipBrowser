@@ -127,7 +127,7 @@
 
     [self getImageRect:&imageRect nameRect:&nameRect storedSizeRect:&storedSizeRect originalSizeRect:&originalSizeRect];
     
-    [[self image] compositeToPoint:NSMakePoint(imageRect.origin.x, NSMaxY(imageRect)) operation:NSCompositeSourceOver];
+    [[self image] drawAtPoint:NSMakePoint(imageRect.origin.x, NSMaxY(imageRect)) fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
     [[self entryName] drawWithRect:nameRect options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes];
     [[self storedSizeString] drawWithRect:storedSizeRect options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes];
     [[self originalSizeString] drawWithRect:originalSizeRect options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes];
